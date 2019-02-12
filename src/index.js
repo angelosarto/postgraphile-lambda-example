@@ -34,7 +34,7 @@ const app = combineMiddlewares([
     next();
   },
   postgraphile(process.env.DATABASE_URL, schemas, {
-    graphqlRoute: '/',
+    //graphqlRoute: '/',
     ...options,
     readCache: `${__dirname}/postgraphile.cache`,
   }),
