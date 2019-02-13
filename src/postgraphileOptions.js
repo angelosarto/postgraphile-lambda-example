@@ -5,7 +5,7 @@ exports.options = {
   cors: false, // taken care of by API gateway 
   
   // enable in dev only -- map to env variable
-  showErrorStack: true,
+  showErrorStack: process.env.IS_DEV || false,
   extendedErrors: 'detail',
   
   graphqlRoute: '/graphql',
@@ -35,5 +35,5 @@ exports.options = {
   
   jwtVerifyOptions: { audience:'https://labsentry.com/graphql'},
   jwtRole: ['https://labsentry_com/app_metadata','user'],
-  pgDefaultRole:'ls_unauth_user_acc',  
+  pgDefaultRole: process.env.DEFAULT_ROLE,
 };
